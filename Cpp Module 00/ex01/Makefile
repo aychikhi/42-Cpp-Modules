@@ -1,8 +1,8 @@
 NAME = PhoneBook
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
-SRCS = phonebook.cpp contact.cpp main.cpp\
+SRCS = PhoneBook.cpp Contact.cpp main.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp PhoneBook.hpp Contact.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

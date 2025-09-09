@@ -6,7 +6,7 @@
 /*   By: aychikhi <aychikhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 17:17:04 by aychikhi          #+#    #+#             */
-/*   Updated: 2025/07/04 17:18:04 by aychikhi         ###   ########.fr       */
+/*   Updated: 2025/09/08 18:00:38 by aychikhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,15 @@ class Contact
         std::string phone_number;
         std::string darkest_secret;
       public:  
-		void print_contact(void);
+		void setFirstName(std::string first_name);
+		void setLastName(std::string last_name);
+		void setNickName(std::string nickname);
+		void setPhoneNumber(std::string phone_number);
+		void setDarkestSecret(std::string darkest_secret);
+		std::string getFirstName();
+		std::string getLastName();
+		std::string getNickName();
+		std::string getPhoneNumber();
+		std::string getDarkestSecret();
 };
-
 #endif
