@@ -56,7 +56,9 @@ private:
 
 };
 
-
+#include <iostream>
+#include <iomanip>
+#include <ctime>
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //
