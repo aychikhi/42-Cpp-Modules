@@ -123,5 +123,5 @@ void Account::_displayTimestamp()
 		<< std::setfill('0') << std::setw(2) << tm->tm_hour
 		<< std::setfill('0') << std::setw(2) << tm->tm_min
 		<< std::setfill('0') << std::setw(2) << tm->tm_sec
-		<< "]";
+		<< "] ";
 }
