@@ -6,7 +6,7 @@
 /*   By: aychikhi <aychikhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 17:24:22 by aychikhi          #+#    #+#             */
-/*   Updated: 2025/09/09 11:54:04 by aychikhi         ###   ########.fr       */
+/*   Updated: 2025/09/10 08:07:13 by aychikhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void add_firstname(PhoneBook& phonebook, int index)
 		std::getline(std::cin, first_name);
 		if (std::cin.eof())
 		{
-			std::cout << "thala ajmi" << std::endl;
+			std::cout << "\nthala ajmi" << std::endl;
 			exit(1);	
 		}
 		if (first_name.empty()) {
@@ -43,7 +43,7 @@ void add_lastname(PhoneBook& phonebook, int index)
 		std::getline(std::cin, last_name);
 		if (std::cin.eof())
 		{
-			std::cout << "thala ajmi" << std::endl;
+			std::cout << "\nthala ajmi" << std::endl;
 			exit(1);	
 		}
 		if (last_name.empty()) {
@@ -64,7 +64,7 @@ void add_nickname(PhoneBook& phonebook, int index)
 		std::getline(std::cin, nickname);
 		if (std::cin.eof())
 		{
-			std::cout << "thala ajmi" << std::endl;
+			std::cout << "\nthala ajmi" << std::endl;
 			exit(1);	
 		}
 		if (nickname.empty()) {
@@ -100,7 +100,7 @@ void add_phonenumber(PhoneBook& phonebook, int index)
 		std::getline(std::cin, phone_number);
 		if (std::cin.eof())
 		{
-			std::cout << "thala ajmi" << std::endl;
+			std::cout << "\nthala ajmi" << std::endl;
 			exit(1);	
 		}
 		if (phone_number.empty()) {
@@ -127,7 +127,7 @@ void add_darkestsecret(PhoneBook& phonebook, int index)
 		std::getline(std::cin, darkest_secret);
 		if (std::cin.eof())
 		{
-			std::cout << "thala ajmi" << std::endl;
+			std::cout << "\nthala ajmi" << std::endl;
 			exit(1);	
 		}
 		if (darkest_secret.empty()) {
@@ -164,25 +164,25 @@ void search_contact(PhoneBook& phonebook, int total_contact)
 		std::cout << "No contacts to display!" << std::endl;
 		return;
 	}
-    std::cout << " -----------------------------------------------------------------------------" << std::endl;
+    std::cout << " --------------------------------------------------------------------------------" << std::endl;
 	std::cout << " | ";
 	std::cout << std::setw(5) << "Index" << " | ";
 	std::cout << std::setw(10) << "First Name" << " | ";
-	std::cout << std::setw(9) << "Last Name" << " | ";
-	std::cout << std::setw(8) << "Nickname" << " | ";
+	std::cout << std::setw(10) << "Last Name" << " | ";
+	std::cout << std::setw(10) << "Nickname" << " | ";
 	std::cout << std::setw(12) << "Phone Number" << " | ";
 	std::cout << std::setw(14) << "Darkest Secret" << " | " << std::endl ;
-	std::cout << " -----------------------------------------------------------------------------" << std::endl;
+	std::cout << " --------------------------------------------------------------------------------" << std::endl;
 	while (i < total_contact)
 	{
 		std::cout << " | ";
 		std::cout << std::setw(5) << i + 1 << " | ";
 		std::cout << std::setw(10) << formatField(phonebook.getContactFirstName(i)) << " | ";
-		std::cout << std::setw(9) << formatField(phonebook.getContactLastName(i)) << " | ";
-		std::cout << std::setw(8) << formatField(phonebook.getContactNickName(i)) << " | ";
-		std::cout << std::setw(12) << formatField(phonebook.getContactPhoneNumber(i), 11) << " | ";
-		std::cout << std::setw(14) << formatField(phonebook.getContactDarkestSecret(i), 13) << " | " << std::endl;
-    	std::cout << " -----------------------------------------------------------------------------" << std::endl;
+		std::cout << std::setw(10) << formatField(phonebook.getContactLastName(i)) << " | ";
+		std::cout << std::setw(10) << formatField(phonebook.getContactNickName(i)) << " | ";
+		std::cout << std::setw(12) << formatField(phonebook.getContactPhoneNumber(i)) << " | ";
+		std::cout << std::setw(14) << formatField(phonebook.getContactDarkestSecret(i)) << " | " << std::endl;
+    	std::cout << " --------------------------------------------------------------------------------" << std::endl;
 		i++;
 	}
 	while (1)
@@ -192,7 +192,7 @@ void search_contact(PhoneBook& phonebook, int total_contact)
 		std::getline(std::cin, index);
 		if (std::cin.eof())
 		{
-			std::cout << "thala ajmi" << std::endl;
+			std::cout << "\nthala ajmi" << std::endl;
 			exit(1);	
 		}
 		if (index.empty() || index.size() != 1)
@@ -233,7 +233,7 @@ int main()
 		std::getline(std::cin, command);
 		if (std::cin.eof())
 		{
-			std::cout << "thala ajmi" << std::endl;
+			std::cout << "\nthala ajmi" << std::endl;
 			return 0;
 		}
 		if (command.empty())
