@@ -151,25 +151,21 @@ void search_contact(PhoneBook& phonebook, int total_contact)
 		std::cout << "No contacts to display!" << std::endl;
 		return;
 	}
-    std::cout << " --------------------------------------------------------------------------------" << std::endl;
+    std::cout << " ------------------------------------------------" << std::endl;
 	std::cout << " | ";
 	std::cout << std::setw(5) << "Index" << " | ";
 	std::cout << std::setw(10) << "First Name" << " | ";
 	std::cout << std::setw(10) << "Last Name" << " | ";
-	std::cout << std::setw(10) << "Nickname" << " | ";
-	std::cout << std::setw(12) << "Phone Number" << " | ";
-	std::cout << std::setw(14) << "Darkest Secret" << " | " << std::endl ;
-	std::cout << " --------------------------------------------------------------------------------" << std::endl;
+	std::cout << std::setw(10) << "Nickname" << " | " << std::endl ;
+    std::cout << " ------------------------------------------------" << std::endl;
 	while (i < total_contact)
 	{
 		std::cout << " | ";
 		std::cout << std::setw(5) << i + 1 << " | ";
 		std::cout << std::setw(10) << formatField(phonebook.getContactFirstName(i)) << " | ";
 		std::cout << std::setw(10) << formatField(phonebook.getContactLastName(i)) << " | ";
-		std::cout << std::setw(10) << formatField(phonebook.getContactNickName(i)) << " | ";
-		std::cout << std::setw(12) << formatField(phonebook.getContactPhoneNumber(i)) << " | ";
-		std::cout << std::setw(14) << formatField(phonebook.getContactDarkestSecret(i)) << " | " << std::endl;
-    	std::cout << " --------------------------------------------------------------------------------" << std::endl;
+		std::cout << std::setw(10) << formatField(phonebook.getContactNickName(i)) << " | " << std::endl;
+    	std::cout << " ------------------------------------------------" << std::endl;
 		i++;
 	}
 	while (1)
