@@ -27,18 +27,16 @@ void Harl::error()
 void Harl::complain(std::string level)
 {
 	int i = 0;
-	void (Harl::*fun[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string cases[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	while (level != cases[i] && i < 4)
 		i++;
-	if (i == 4)
+	switch (i)
 	{
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		return;
-	}
-	while (i < 4)
-	{
-		(this->*fun[i])();
-		i++;
+		case 0: this->debug();
+		case 1: this->info();
+		case 2: this->warning();
+		case 3: this->error();
+			break;
+		default: std::cout << "[ Probably complaining about insignificant problems ]" << std::endl; 
 	}
 }
