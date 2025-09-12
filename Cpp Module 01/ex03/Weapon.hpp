@@ -3,14 +3,14 @@
 
 #include <iostream>
 
-class Weopon
+class Weapon
 {
 	private:
 		std::string type;
 	public:
-		Weopon(std::string type);
-		~Weopen(void);
-		std::string& getType();
+		Weapon(std::string type);
+		// ~Weapen(void);
+		const std::string &getType(void);
 		void	setType(std::string newType);
 };
 
