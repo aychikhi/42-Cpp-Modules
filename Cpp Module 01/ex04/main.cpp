@@ -10,7 +10,7 @@ int main(int ac, char **av)
 	std::string filename;
 	if (ac != 4)
 	{
-		std::cout << "the progame must have 3 parametres" << std::endl;
+		std::cout << "the program must have 3 parameters" << std::endl;
 		return 1;
 	}
 	std::ifstream in_file(av[1]);
@@ -39,10 +39,12 @@ int main(int ac, char **av)
 	}
 	while (std::getline(in_file, line))
 	{
+		pos = 0;
 		while ((pos = line.find(s1)) !=  std::string::npos)
 		{
 			line = line.erase(pos, s1.length());
 			line = line.insert(pos, s2);
+			pos += s2.length();
 		}
 		out_file << line << std::endl;
 	}
