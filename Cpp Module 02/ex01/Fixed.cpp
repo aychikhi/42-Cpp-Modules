@@ -49,12 +49,12 @@ std::ostream &operator<<(std::ostream &COUT, Fixed const &object)
 int Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return this->fx_value;
+	return fx_value;
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	this->fx_value = raw;
+	fx_value = raw;
 }
 
 float Fixed::toFloat() const
