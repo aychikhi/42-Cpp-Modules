@@ -10,7 +10,7 @@ class Fixed
 		static const int stored_bits = 8;
 	public:
 		Fixed();
-		Fixed(Fixed &object);
+		Fixed(const Fixed &object);
 		Fixed &operator=(const Fixed &object);
 		~Fixed();
 		int getRawBits( void ) const;
