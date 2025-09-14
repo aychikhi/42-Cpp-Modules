@@ -25,12 +25,12 @@ Fixed &Fixed::operator=(const Fixed &object)
 int Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return this->fx_value;
+	return fx_value;
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	this->fx_value = raw;
+	fx_value = raw;
 }
 
 Fixed::~Fixed()
