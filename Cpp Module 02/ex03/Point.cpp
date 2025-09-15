@@ -8,12 +8,7 @@ Point::Point(const Point &other) : x(other.x) , y(other.y) {};
 
 Point &Point::operator=(const Point &new_point)
 {
-    if (this != &new_point)
-    {
-		// Note: Since x and y are const, we can't actually reassign them
-        // This assignment operator has limited functionality
-        // const_cast would be needed but is not recommended
-    }
+	(void)new_point;
     return (*this);
 }
 
