@@ -26,7 +26,16 @@ Fixed Point::getY() const
 	return y;
 }
 
-Fixed cross_produt_2d(const Point p1, const Point p2, const Point p3)
+Fixed triangleArea(Point const p1, Point const p2, Point const p3)
 {
-	return (p2.getX() - p1.getX()) * (p3.getY() - p1.getY()) - (p2.getY() - p1.getY()) * (p3.getX() - p1.getX());
+    Fixed x1 = p1.getX();
+    Fixed y1 = p1.getY();
+    Fixed x2 = p2.getX();
+    Fixed y2 = p2.getY();
+    Fixed x3 = p3.getX();
+    Fixed y3 = p3.getY();
+    Fixed area = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2);
+    if (area < Fixed(0))
+        area = Fixed(0) - area;
+    return area / Fixed(2);
 }

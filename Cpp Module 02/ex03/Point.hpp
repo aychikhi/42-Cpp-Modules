@@ -18,7 +18,7 @@ class Point
 		Fixed getY() const;
 };
 
-Fixed cross_produt_2d(const Point p1, const Point p2, const Point p3);
+Fixed triangleArea(Point const p1, Point const p2, Point const p3);
 bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
