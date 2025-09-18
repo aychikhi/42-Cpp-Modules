@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "ClavTrap default constructor called!" << std::endl;
+	std::cout << "ClapTrap default constructor called!" << std::endl;
 	Name = "LMRAYTET";
 	Hit_points = 10;
 	Energy_points = 10;
@@ -11,7 +11,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string new_name)
 {
-	std::cout << "ClavTrap parametrized constructor called!" << std::endl;
+	std::cout << "ClapTrap parametrized constructor called!" << std::endl;
 	Name = new_name;
 	Hit_points = 10;
 	Energy_points = 10;
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(std::string new_name)
 
 ClapTrap::ClapTrap(const ClapTrap &obj)
 {
-	std::cout << "ClavTrap copy constructor called!" << std::endl;
+	std::cout << "ClapTrap copy constructor called!" << std::endl;
     *this = obj;
 }
 
@@ -66,7 +66,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 {
-	std::cout << "ClavTrap copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	if (this != &obj)
 	{
 		Name = obj.Name;
@@ -79,5 +79,5 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClavTrap destructor called!" << std::endl;
+	std::cout << "ClapTrap destructor called!" << std::endl;
 }
