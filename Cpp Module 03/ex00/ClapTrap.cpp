@@ -11,7 +11,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string new_name)
 {
-	std::cout << "Parametrized constructor called" << std::endl;
+	std::cout << "Parametrized constructor called!" << std::endl;
 	Name = new_name;
 	Hit_points = 10;
 	Energy_points = 10;
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(std::string new_name)
 
 ClapTrap::ClapTrap(const ClapTrap &obj)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called!" << std::endl;
     *this = obj;
 }
 
@@ -48,7 +48,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 			Hit_points = 0;
 	}
 	else
-		std::cout << "ClapTrap " << Name << " is dead" << std::endl;
+		std::cout << "ClapTrap " << Name << " is dead!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -66,7 +66,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called!" << std::endl;
 	if (this != &obj)
 	{
 		Name = obj.Name;
