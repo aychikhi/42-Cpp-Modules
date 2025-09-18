@@ -3,7 +3,7 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "Default constructor called!" << std::endl;
-	Name = "LMRATET";
+	Name = "LMRAYTET";
 	Hit_points = 10;
 	Energy_points = 10;
 	Attack_damage = 0;
@@ -11,7 +11,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string new_name)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Parametrized constructor called" << std::endl;
 	Name = new_name;
 	Hit_points = 10;
 	Energy_points = 10;
