@@ -2,18 +2,19 @@
 
 Dog::Dog() : Animal()
 {
-	std::cout << "Dog constractor called!" << std::endl;
+	type = "Dog";
+	std::cout << "Dog constructor called!" << std::endl;
 }
 
 Dog::Dog(const std::string new_Type) : Animal(new_Type)
 {
-	std::cout << "Dog parameterized constractor called!" << std::endl;
+	std::cout << "Dog parameterized constructor called!" << std::endl;
 	type = new_Type;
 }
 
 Dog::Dog(const Dog &obj) : Animal(obj)
 {
-	std::cout << "Dog copy constractor called!" << std::endl;
+	std::cout << "Dog copy constructor called!" << std::endl;
 	type = obj.type;
 }
 
@@ -31,5 +32,5 @@ void Dog::makeSound()const
 
 Dog::~Dog()
 {
-	std::cout << "Dog cestractor called!" << std::endl;
+	std::cout << "Dog destractor called!" << std::endl;
 }

@@ -2,18 +2,19 @@
 
 Cat::Cat() : Animal()
 {
-	std::cout << "Cat constractor called!" << std::endl;
+	type = "Cat";
+	std::cout << "Cat constructor called!" << std::endl;
 }
 
 Cat::Cat(const std::string new_Type) : Animal(new_Type)
 {
-	std::cout << "Cat parameterized constractor called!" << std::endl;
+	std::cout << "Cat parameterized constructor called!" << std::endl;
 	type = new_Type;
 }
 
 Cat::Cat(const Cat &obj) : Animal(obj)
 {
-	std::cout << "Cat copy constractor called!" << std::endl;
+	std::cout << "Cat copy constructor called!" << std::endl;
 	type = obj.type;
 }
 

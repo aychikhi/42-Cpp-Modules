@@ -2,19 +2,19 @@
 
 Animal::Animal()
 {
-	std::cout << "Animal constractor called!" << std::endl;
+	std::cout << "Animal constructor called!" << std::endl;
 	type = "LMDAHSSESS";
 }
 
 Animal::Animal(const std::string new_Type)
 {
-	std::cout << "Animal parameterized constractor called!" << std::endl;
+	std::cout << "Animal parameterized constructor called!" << std::endl;
 	type = new_Type;
 }
 
 Animal::Animal(const Animal &obj)
 {
-	std::cout << "Animal copy constractor called!" << std::endl;
+	std::cout << "Animal copy constructor called!" << std::endl;
 	type = obj.type;
 }
 
@@ -37,5 +37,5 @@ std::string Animal::getType()const
 
 Animal::~Animal()
 {
-	std::cout << "Animal cestractor called!" << std::endl;
+	std::cout << "Animal destractor called!" << std::endl;
 }

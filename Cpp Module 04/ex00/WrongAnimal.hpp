@@ -2,7 +2,6 @@
 #define WRONGANIMAL_HPP
 
 #include <iostream>
-#include "WrongAnimal.hpp"
 
 class WrongAnimal
 {
@@ -15,7 +14,7 @@ class WrongAnimal
 		WrongAnimal &operator=(const WrongAnimal &obj);
 		~WrongAnimal();
 		void makeSound()const;
-		std::string getType();
+		std::string getType()const;
 };
 
 #endif

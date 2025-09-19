@@ -12,9 +12,9 @@ class Animal
 		Animal(const Animal &obj);
 		Animal(const std::string new_Type);
 		Animal &operator=(const Animal &obj);
-		~Animal();
-		void makeSound()const;
-		std::string getType()const;
+		virtual ~Animal();
+		virtual void makeSound()const;
+		virtual std::string getType()const;
 };
 
 #endif
