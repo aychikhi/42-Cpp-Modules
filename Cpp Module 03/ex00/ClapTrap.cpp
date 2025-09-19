@@ -59,7 +59,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (Energy_points > 0)
+	if (Energy_points > 0 && Hit_points > 0)
 	{	
 		std::cout << "ClapTrap " << Name << " was healed, regains " << amount << " hit points"
 			<< std::endl;
