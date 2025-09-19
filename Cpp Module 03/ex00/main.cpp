@@ -2,9 +2,9 @@
 
 int main() 
 {
-    ClapTrap robot("TestBot");
-    robot.attack("Enemy");
-    robot.takeDamage(5);
+    ClapTrap robot("LMRAYTET");
+    robot.attack("LMCHELEL");
+    robot.takeDamage(11);
     robot.beRepaired(3);
     return 0;
 }
