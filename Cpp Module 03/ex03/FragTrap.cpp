@@ -23,9 +23,8 @@ FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 
 FragTrap &FragTrap::operator=(const FragTrap &obj)
 {
+	ClapTrap::operator=(obj);
 	std::cout << "FragTrap copy assignment operator called!" << std::endl;
-	if (this != &obj)
-		ClapTrap::operator=(obj);
 	return *this;
 }
 
