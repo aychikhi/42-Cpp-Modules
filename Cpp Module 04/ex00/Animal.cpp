@@ -37,5 +37,5 @@ std::string Animal::getType()const
 
 Animal::~Animal()
 {
-	std::cout << "Animal destractor called!" << std::endl;
+	std::cout << "Animal destructor called!" << std::endl;
 }

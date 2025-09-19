@@ -4,16 +4,26 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete i;
-	delete j;
+	// tests with virtual
+	Animal *an = new Dog();
+    Animal *an2 = new Cat();
+
+    std::cout << an->getType() << std::endl;
+    an->makeSound();
+
+
+    std::cout << an2->getType() << std::endl;
+    an2->makeSound();
+
+    delete an;
+    delete an2;
+
+	//tests without virtual
+	// WrongAnimal *an = new WrongCat();
+
+    // std::cout << an->getType() << std::endl;
+    // an->makeSound();
+
+    // delete an;
 	return 0;
 }
