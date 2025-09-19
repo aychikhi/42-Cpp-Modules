@@ -4,16 +4,18 @@
 #include <iostream>
 #include "WrongAnimal.hpp"
 
-class WrongAnimal : public WrongAnimal
+class WrongAnimal
 {
 	protected:
 		std::string type;
 	public:
 		WrongAnimal();
 		WrongAnimal(const WrongAnimal &obj);
+		WrongAnimal(const std::string new_Type);
 		WrongAnimal &operator=(const WrongAnimal &obj);
 		~WrongAnimal();
-		makeSound();
+		void makeSound()const;
+		std::string getType();
 };
 
 #endif

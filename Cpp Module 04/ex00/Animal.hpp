@@ -10,9 +10,11 @@ class Animal
 	public:
 		Animal();
 		Animal(const Animal &obj);
+		Animal(const std::string new_Type);
 		Animal &operator=(const Animal &obj);
 		~Animal();
-		void makeSound();
+		void makeSound()const;
+		std::string getType()const;
 };
 
 #endif
