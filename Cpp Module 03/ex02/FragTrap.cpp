@@ -23,7 +23,8 @@ FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 
 FragTrap &FragTrap::operator=(const FragTrap &obj)
 {
-	ClapTrap::operator=(obj);
+	if (this != &obj)
+		ClapTrap::operator=(obj);
 	std::cout << "FragTrap copy assignment operator called!" << std::endl;
 	return *this;
 }
@@ -31,18 +32,6 @@ FragTrap &FragTrap::operator=(const FragTrap &obj)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called!" << std::endl;
-}
-
-void FragTrap::attack(const std::string& target)
-{
-	if (Hit_points && Energy_points)
-	{
-		std::cout << "FragTrap " << Name << " attacks " << target << ", causing "
-			<< Attack_damage << " points of damage!" << std::endl;
-		Energy_points--;
-	}
-	else
-        std::cout << "FragTrap " << Name << " can't attack because it has no hit points or energy points left!" << std::endl;
 }
 
 void FragTrap::highFivesGuys()

@@ -20,7 +20,8 @@ DiamondTrap::DiamondTrap(const DiamondTrap &obj) : ClapTrap(obj), ScavTrap(obj),
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &obj)
 {
-	ClapTrap::operator=(obj);
+	if (this != &obj)
+		ClapTrap::operator=(obj);
 	std::cout << "DiamondTrap copy assignment operator called!" << std::endl;
 	return *this;
 }
