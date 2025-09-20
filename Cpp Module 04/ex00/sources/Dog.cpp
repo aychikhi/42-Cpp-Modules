@@ -1,4 +1,4 @@
-#include "Dog.hpp"
+#include "../includes/Dog.hpp"
 
 Dog::Dog() : Animal()
 {
@@ -6,7 +6,7 @@ Dog::Dog() : Animal()
 	std::cout << "Dog constructor called!" << std::endl;
 }
 
-Dog::Dog(const std::string new_Type) : Animal(new_Type)
+Dog::Dog(const std::string &new_Type) : Animal(new_Type)
 {
 	std::cout << "Dog parameterized constructor called!" << std::endl;
 	type = new_Type;

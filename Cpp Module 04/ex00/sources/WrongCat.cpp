@@ -1,4 +1,4 @@
-#include "WrongCat.hpp"
+#include "../includes/WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal()
 {
@@ -6,7 +6,7 @@ WrongCat::WrongCat() : WrongAnimal()
 	std::cout << "WrongCat constructor called!" << std::endl;
 }
 
-WrongCat::WrongCat(const std::string new_Type) : WrongAnimal(new_Type)
+WrongCat::WrongCat(const std::string &new_Type) : WrongAnimal(new_Type)
 {
 	std::cout << "WrongCat parameterized constructor called!" << std::endl;
 	type = new_Type;
