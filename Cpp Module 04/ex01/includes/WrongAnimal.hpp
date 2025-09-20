@@ -10,7 +10,7 @@ class WrongAnimal
 	public:
 		WrongAnimal();
 		WrongAnimal(const WrongAnimal &obj);
-		WrongAnimal(const std::string new_Type);
+		WrongAnimal(const std::string &new_Type);
 		WrongAnimal &operator=(const WrongAnimal &obj);
 		~WrongAnimal();
 		void makeSound()const;

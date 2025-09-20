@@ -1,13 +1,31 @@
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#include "./includes/Animal.hpp"
+#include "./includes/Dog.hpp"
+#include "./includes/Cat.hpp"
+#include "./includes/Brain.hpp"
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
 
-	delete j;//should not create a leak
-	delete i;
-	return 0;
+    Animal* animals[4];
+    animals[0] = new Dog();
+    animals[1] = new Cat();
+    animals[2] = new Dog();
+    animals[3] = new Cat();
+    
+    for(int i = 0; i < 4; i++) {
+        animals[i]->makeSound();
+    }
+    
+    for(int i = 0; i < 4; i++) {
+        delete animals[i];
+    }
+    
+	//testing deep copy
+    Dog* dog1 = new Dog();
+    Dog* dog2 = new Dog(*dog1);  
+    delete dog1;  
+    dog2->makeSound();  
+    delete dog2;
+    
+    return 0;
 }

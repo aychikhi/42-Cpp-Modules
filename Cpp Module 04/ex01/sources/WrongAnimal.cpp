@@ -1,4 +1,4 @@
-#include "WrongAnimal.hpp"
+#include "../includes/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal()
 {
@@ -6,7 +6,7 @@ WrongAnimal::WrongAnimal()
 	type = "LMDAHSSESS";
 }
 
-WrongAnimal::WrongAnimal(const std::string new_Type)
+WrongAnimal::WrongAnimal(const std::string &new_Type)
 {
 	std::cout << "WrongAnimal parameterized constructor called!" << std::endl;
 	type = new_Type;
@@ -21,7 +21,8 @@ WrongAnimal::WrongAnimal(const WrongAnimal &obj)
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &obj)
 {
 	std::cout << "WrongAnimal copy assignment called!" << std::endl;
-	type = obj.type;
+	if (this != &obj)
+		type = obj.type;
 	return *this;
 }
 

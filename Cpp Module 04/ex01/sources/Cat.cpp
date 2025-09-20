@@ -1,5 +1,5 @@
-#include "Cat.hpp"
-#include "Brain.hpp"
+#include "../includes/Cat.hpp"
+#include "../includes/Brain.hpp"
 
 Cat::Cat() : Animal()
 {
@@ -8,7 +8,7 @@ Cat::Cat() : Animal()
 	std::cout << "Cat constructor called!" << std::endl;
 }
 
-Cat::Cat(const std::string new_Type) : Animal(new_Type)
+Cat::Cat(const std::string &new_Type) : Animal(new_Type)
 {
 	std::cout << "Cat parameterized constructor called!" << std::endl;
 	type = new_Type;

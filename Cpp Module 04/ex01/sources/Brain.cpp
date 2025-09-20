@@ -1,4 +1,4 @@
-#include "Brain.hpp"
+#include "../includes/Brain.hpp"
 
 Brain::Brain()
 {
@@ -24,8 +24,9 @@ Brain::Brain(const Brain &obj)
 
 Brain	&Brain::operator=(const Brain &obj)
 {
-	for (int i = 0; i < 100; ++i)
-        ideas[i] = obj.ideas[i];
+	if (this != &obj)
+		for (int i = 0; i < 100; ++i)
+        	ideas[i] = obj.ideas[i];
     std::cout << "Brain copy assignment called" << std::endl;
 	return *this;
 }

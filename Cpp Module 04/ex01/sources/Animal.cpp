@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "../includes/Animal.hpp"
 
 Animal::Animal()
 {
@@ -6,7 +6,7 @@ Animal::Animal()
 	type = "LMDAHSSESS";
 }
 
-Animal::Animal(const std::string new_Type)
+Animal::Animal(const std::string &new_Type)
 {
 	std::cout << "Animal parameterized constructor called!" << std::endl;
 	type = new_Type;
@@ -21,7 +21,8 @@ Animal::Animal(const Animal &obj)
 Animal &Animal::operator=(const Animal &obj)
 {
 	std::cout << "Animal copy assignment called!" << std::endl;
-	type = obj.type;
+	if (this != &obj)
+		type = obj.type;
 	return *this;
 }
 
