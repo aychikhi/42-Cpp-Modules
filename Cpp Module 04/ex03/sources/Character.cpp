@@ -5,7 +5,9 @@ Character::Character()
     std::cout << "Character default constructor called" << std::endl;
     Name = "default";
     for (int i = 0; i < 4; i++)
+    {
         slots[i] = NULL;
+    }
 	Head = NULL;
 }
 
@@ -14,7 +16,9 @@ Character::Character(const std::string &Name)
     std::cout << "Character parameterized constructor called" << std::endl;
     this->Name = Name;
     for (int i = 0; i < 4; i++)
+    {
         slots[i] = NULL;
+    }
 	Head = NULL;
 }
 
