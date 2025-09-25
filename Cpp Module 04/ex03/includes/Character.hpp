@@ -16,7 +16,7 @@ class Character : public ICharacter
 		std::string Name;
 		AMateria *slots[4];
 
-		Node *Node;
+		Node *Head;
 		void addback(AMateria *m);
 		void delete_all();
 

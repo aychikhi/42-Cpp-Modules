@@ -6,7 +6,7 @@ Character::Character()
     Name = "default";
     for (int i = 0; i < 4; i++)
         slots[i] = NULL;
-	Node = NULL;
+	Head = NULL;
 }
 
 Character::Character(const std::string &Name)
@@ -15,13 +15,13 @@ Character::Character(const std::string &Name)
     this->Name = Name;
     for (int i = 0; i < 4; i++)
         slots[i] = NULL;
-	Node = NULL;
+	Head = NULL;
 }
 
 Character::Character(const Character &obj)
 {
     std::cout << "Character copy constructor called" << std::endl;
-	Node = NULL;
+	Head = NULL;
     Name = obj.Name;
     for (int i = 0; i < 4; i++)
     {
@@ -43,7 +43,7 @@ Character &Character::operator=(const Character &obj)
             slots[i] = NULL;
         }
 		delete_all();
-        Node = NULL;
+        Head = NULL;
         Name = obj.Name;
         for (int i = 0; i < 4; i++)
         {
@@ -114,12 +114,12 @@ void Character::addback(AMateria *m)
 	struct Node *newNode = new struct Node;
 	newNode->m = m;
 	newNode->next = NULL;
-	if (!Node)
+	if (!Head)
 	{
-		Node = newNode;
+		Head = newNode;
 		return;
 	}
-	struct Node *tmp = Node; 
+	struct Node *tmp = Head; 
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = newNode;
@@ -127,13 +127,13 @@ void Character::addback(AMateria *m)
 
 void Character::delete_all()
 {
-	struct Node *tmp = Node;
-	while (Node)
+	struct Node *tmp = Head;
+	while (Head)
 	{
-		tmp = Node;
-		Node = Node->next;
+		tmp = Head;
+		Head = Head->next;
 		delete tmp->m;
 		delete tmp;	
 	}
-	Node = NULL;
+	Head = NULL;
 }
