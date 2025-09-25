@@ -14,7 +14,7 @@ AMateria::AMateria(std::string const &type)
 AMateria::AMateria(const AMateria &obj)
 {
 	std::cout << "AMateria copy constructor called" << std::endl;	
-	*this = obj;
+	this->type = obj.type;
 }
 
 AMateria &AMateria::operator=(const AMateria &obj)
@@ -22,6 +22,7 @@ AMateria &AMateria::operator=(const AMateria &obj)
 	std::cout << "AMateria copy assignment called" << std::endl;	
 	if (this != &obj)
 	{
+		this->type = obj.getType();
 	}
 	return *this;
 }

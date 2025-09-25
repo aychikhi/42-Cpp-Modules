@@ -76,13 +76,11 @@ void MateriaSource::learnMateria(AMateria *m)
 	{
 		if (!slots[i])
 		{
-			slots[i] = m->clone();
-			delete m;
+			slots[i] = m;
 			return;
 		}
 	}
 	std::cout << "MateriaSource is full" << std::endl;
-	delete m;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)
