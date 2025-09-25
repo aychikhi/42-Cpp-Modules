@@ -6,16 +6,9 @@ Ice::Ice() : AMateria("ice")
 	std::cout << "Ice default constructor called" << std::endl;	
 }
 
-Ice::Ice(std::string const &type) : AMateria(type)
-{
-	std::cout << "Ice parameterized constructor called" << std::endl;
-	this->type = type;
-}
-
 Ice::Ice(const Ice &obj) : AMateria(obj)
 {
 	std::cout << "Ice copy constructor called" << std::endl;	
-	*this = obj;
 }
 
 Ice &Ice::operator=(const Ice &obj)

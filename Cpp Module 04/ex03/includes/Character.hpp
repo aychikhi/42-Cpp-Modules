@@ -4,11 +4,22 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
+struct Node
+{
+	AMateria *m;
+	Node *next;
+};
+
 class Character : public ICharacter
 {
 	private:
 		std::string Name;
 		AMateria *slots[4];
+
+		Node *Node;
+		void addback(AMateria *m);
+		void delete_all();
+
 	public:
 		Character();
 		Character(const std::string &Name);

@@ -22,7 +22,6 @@ AMateria &AMateria::operator=(const AMateria &obj)
 	std::cout << "AMateria copy assignment called" << std::endl;	
 	if (this != &obj)
 	{
-		this->type = obj.getType();
 	}
 	return *this;
 }

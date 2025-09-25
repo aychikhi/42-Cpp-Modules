@@ -24,7 +24,13 @@ MateriaSource::MateriaSource(AMateria *slots[4])
 MateriaSource::MateriaSource(const MateriaSource &obj)
 {
 	std::cout << "MateriaSource copy constructor called" << std::endl;
-	*this = obj;
+	for (int i = 0; i < 4; i++)
+	{
+		if (obj.slots[i])
+			slots[i] = obj.slots[i]->clone();
+		else
+			slots[i] = NULL;
+	}
 }
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &obj)
@@ -62,16 +68,21 @@ MateriaSource::~MateriaSource()
 void MateriaSource::learnMateria(AMateria *m)
 {
 	if (!m)
+	{
 		std::cout << "cannot learn a NULL Materia" << std::endl;
+		return;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (!slots[i])
 		{
 			slots[i] = m->clone();
+			delete m;
 			return;
 		}
 	}
-	std::cout << "this Materia is full" << std::endl;
+	std::cout << "MateriaSource is full" << std::endl;
+	delete m;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)

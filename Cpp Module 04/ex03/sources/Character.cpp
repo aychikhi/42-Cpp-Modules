@@ -6,6 +6,7 @@ Character::Character()
     Name = "default";
     for (int i = 0; i < 4; i++)
         slots[i] = NULL;
+	Node = NULL;
 }
 
 Character::Character(const std::string &Name)
@@ -14,11 +15,13 @@ Character::Character(const std::string &Name)
     this->Name = Name;
     for (int i = 0; i < 4; i++)
         slots[i] = NULL;
+	Node = NULL;
 }
 
 Character::Character(const Character &obj)
 {
     std::cout << "Character copy constructor called" << std::endl;
+	Node = NULL;
     Name = obj.Name;
     for (int i = 0; i < 4; i++)
     {
@@ -39,7 +42,8 @@ Character &Character::operator=(const Character &obj)
             delete slots[i];
             slots[i] = NULL;
         }
-        
+		delete_all();
+        Node = NULL;
         Name = obj.Name;
         for (int i = 0; i < 4; i++)
         {
@@ -60,6 +64,7 @@ Character::~Character()
         delete slots[i];
         slots[i] = NULL;
     }
+	delete_all();
 }
 
 std::string const &Character::getName() const
@@ -85,8 +90,11 @@ void Character::unequip(int idx)
 {
     if (idx >= 0 && idx < 4 && slots[idx])
     {
+		addback(slots[idx]);
         slots[idx] = NULL;
     }
+	else 
+		std::cout << "invalid index: " << idx << std::endl;
 }
 
 void Character::use(int idx, ICharacter &target)
@@ -95,4 +103,37 @@ void Character::use(int idx, ICharacter &target)
     {
         slots[idx]->use(target);
     }
+	else
+		std::cout << "Invalid inventory index or empty slot" << std::endl;
+}
+
+void Character::addback(AMateria *m)
+{
+	if (!m)
+		return ;
+	struct Node *newNode = new struct Node;
+	newNode->m = m;
+	newNode->next = NULL;
+	if (!Node)
+	{
+		Node = newNode;
+		return;
+	}
+	struct Node *tmp = Node; 
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = newNode;
+}
+
+void Character::delete_all()
+{
+	struct Node *tmp = Node;
+	while (Node)
+	{
+		tmp = Node;
+		Node = Node->next;
+		delete tmp->m;
+		delete tmp;	
+	}
+	Node = NULL;
 }

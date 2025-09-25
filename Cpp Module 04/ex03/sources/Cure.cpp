@@ -6,16 +6,9 @@ Cure::Cure() : AMateria("cure")
 	std::cout << "Cure default constructor called" << std::endl;	
 }
 
-Cure::Cure(std::string const &type) : AMateria(type)
-{
-	std::cout << "Cure parameterized constructor called" << std::endl;
-	this->type = type;
-}
-
 Cure::Cure(const Cure &obj) : AMateria(obj)
 {
 	std::cout << "Cure copy constructor called" << std::endl;	
-	*this = obj;
 }
 
 Cure &Cure::operator=(const Cure &obj)
