@@ -4,7 +4,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <climits> 
-#include <string>
+#include <iomanip>
+#include <cmath>  
 
 class ScalarConverter
 {
@@ -20,6 +21,10 @@ class ScalarConverter
 		static bool isInt(const std::string& s);
 		static bool isFloat(const std::string& s);
 		static bool isDouble(const std::string& s);
+		static void printChar(char c);
+		static void printInt(int i);
+		static void printDouble(double d);
+		static void printFloat(float f);
 };
 
 #endif
