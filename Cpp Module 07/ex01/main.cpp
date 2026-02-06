@@ -14,7 +14,6 @@ void increment(int& x)
 
 int main()
 {
-    // Test with int array
     int intArray[] = {1, 2, 3, 4, 5};
     
     std::cout << "Original array:" << std::endl;
@@ -24,7 +23,6 @@ int main()
     iter(intArray, 5, increment);
     iter(intArray, 5, print<int>);
     
-    // Test with string array
     std::string strArray[] = {"Hello", "World", "42"};
     
     std::cout << "\nString array:" << std::endl;
