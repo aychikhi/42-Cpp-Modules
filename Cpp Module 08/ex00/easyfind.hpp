@@ -3,7 +3,7 @@
 #include <stdexcept>
 
 template <typename T>
- typename T::iterator easyfind(T& container, int val)
+typename T::iterator easyfind(T& container, int val)
 {
     typename T::iterator i;
     for(i = container.begin(); i != container.end(); i++)
@@ -11,5 +11,5 @@ template <typename T>
         if (*i == val)
             return i;
     }
-    throw std::runtime_error("value not Found!");
+    throw std::runtime_error("value not found!");
 }
