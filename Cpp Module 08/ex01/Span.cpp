@@ -30,7 +30,7 @@ Span::~Span()
 void Span::addNumber(int num)
 {
     if(n.size() >= max)
-        throw std::exception();
+        throw std::runtime_error("Span is full");
     n.push_back(num);
 }
 
@@ -38,7 +38,7 @@ void Span::addNumber(int num)
 int Span::shortestSpan() const
 {
     if(n.size() < 2)
-        throw std::exception();
+        throw std::runtime_error("Not enough elements to calculate span");
 
     std::vector<int> sorted = n;
     std::sort(sorted.begin(), sorted.end());
@@ -54,6 +54,8 @@ int Span::shortestSpan() const
 
 int Span::longestSpan() const
 {
+    if (n.size() < 2)
+        throw std::runtime_error("Not enough elements to calculate span");
     int min = *std::min_element(n.begin(), n.end());
     int max = *std::max_element(n.begin(), n.end());
     return max - min;

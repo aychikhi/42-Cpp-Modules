@@ -1,4 +1,9 @@
 #include "Span.hpp"
+#include <iostream>  
+#include <cstdlib>    
+#include <algorithm>
+#include <climits> 
+#include <ctime> 
 
 int main()
 {

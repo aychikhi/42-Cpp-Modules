@@ -5,6 +5,7 @@
 #include <cstdlib>    
 #include <algorithm>
 #include <climits> 
+#include <ctime> 
 
 class Span
 {
