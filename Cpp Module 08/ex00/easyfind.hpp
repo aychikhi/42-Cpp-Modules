@@ -1,10 +1,6 @@
 #pragma once
 
-#include <vector>    
-#include <list>       
-#include <deque>
-#include <iostream>
-#include <exception>
+#include <stdexcept>
 
 template <typename T>
  typename T::iterator easyfind(T& container, int val)
