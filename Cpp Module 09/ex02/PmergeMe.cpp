@@ -257,6 +257,6 @@ void PmergeMe::sort()
     for(size_t i = 0; i < vec.size(); i++)
         std::cout << " " << vec[i];
     std::cout << std::endl;
-    std::cout << "Time to process a range of " << vec.size() << " element with std::vector : " << (t2 - t1) << " us" << std::endl;
-    std::cout << "Time to process a range of " << deq.size() << " element with std::deque : " << (t4 - t3) << " us" << std::endl;
+    std::cout << "Time to process a range of " << vec.size() << " elements with std::vector : " << (t2 - t1) << " us" << std::endl;
+    std::cout << "Time to process a range of " << deq.size() << " elements with std::deque : " << (t4 - t3) << " us" << std::endl;
 }
